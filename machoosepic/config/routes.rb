@@ -14,6 +14,7 @@ Machoosepic::Application.routes.draw do
   #   resources :products
   resources :vote
   resources :top
+  resources :photo
 
   # Sample resource route with options:
   #   resources :products do

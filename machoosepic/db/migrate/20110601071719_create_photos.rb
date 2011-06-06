@@ -1,10 +1,10 @@
 class CreatePhotos < ActiveRecord::Migration
   def self.up
     create_table :photos do |t|
-      t.integer :id
-      t.string :href
+      t.string :href, :null => false
       t.string :owner
-      t.integer :rating => {:default => 1400}
+      t.integer :elo_rating => {:default => 1000}
+      t.integer :match_count => {:default => 0}
 
       t.timestamps
     end
