@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  id: 
-  href: 
-  owner: 
-  rating: 
-
-two:
-  id: 
-  href: 
-  owner: 
-  rating: 
+#one:
+#  id: 
+#  href: 
+#  owner: 
+#  rating: 
+#
+#two:
+#  id: 
+#  href: 
+#  owner: 
+#  rating: 

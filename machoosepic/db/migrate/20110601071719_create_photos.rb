@@ -3,8 +3,8 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :href, :null => false
       t.string :owner
-      t.integer :elo_rating => {:default => 1000}
-      t.integer :match_count => {:default => 0}
+      t.integer :elo_rating, :default => 1000
+      t.integer :match_count, :default => 0
 
       t.timestamps
     end
