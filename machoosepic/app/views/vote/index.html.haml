@@ -1,13 +1,23 @@
 .flash
   %span=flash[:notice]
   %span=flash[:params]
-%strong Vote Index
 %form{:method => 'POST'} 
-  %input{:name => 'photo_1', :id => 'photo_id_1', :type => 'hidden', :value => '112321'}
-  %input{:name => 'photo_2', :id => 'photo_id_2', :type => 'hidden', :value => '43553'}
-  %input{:name => 'photo_id_vote', :id => 'btn_1', :type => 'image', :src => 'test', :value => "a#{@photo1Id}"}
+  %strong 
+    Photo 1 Rating:
+    =@photo1.rating
+    Match Count:
+    =@photo1.match_count
+  %input{:name => 'photo_1', :id => 'photo_id_1', :type => 'hidden', :value => "#{@photo1.id}"}
+  %input{:name => 'photo_2', :id => 'photo_id_2', :type => 'hidden', :value => "#{@photo2.id}"}
+    %input{:name => 'photo_id_vote', :id => 'btn_1', :type => 'image', :src => "#{@photo1.href}", :"#{@photo1.img_modify}" => 400, :value => "#{@photo1.id}"}
+    // - if @photo1.is_portrait == 'Y' - else :
     .vote_label
       %label{:for => 'btn_1'} Vote for this Photo
-  %input{:name => 'photo_id_vote', :id => 'btn_2', :type => 'image', :src => 'test', :value => "b#{@photo2Id}"}
-    .vote_label
-      %label{:for => 'btn_2'} Vote for this Photo
+  %strong 
+    Photo 1 Rating:
+    =@photo2.rating
+    Match Count:
+    =@photo2.match_count
+    %input{:name => 'photo_id_vote', :id => 'btn_2', :type => 'image', :src => "#{@photo2.href}", :"#{@photo2.img_modify}" => 400, :value => "b#{@photo2.id}"}
+      .vote_label
+        %label{:for => 'btn_2'} Vote for this Photo

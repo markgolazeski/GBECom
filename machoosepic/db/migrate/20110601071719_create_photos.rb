@@ -5,6 +5,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :owner
       t.integer :elo_rating, :default => 1000
       t.integer :match_count, :default => 0
+      t.boolean :is_portrait, :default => 'N', :length => 1
 
       t.timestamps
     end

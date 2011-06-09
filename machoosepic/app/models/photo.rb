@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :id, :href, :rating, :match_count
+  attr_accessible :id, :href, :rating, :match_count, :owner, :is_portrait
   validates_presence_of :href
 
   alias_attribute :rating, :elo_rating
@@ -25,6 +25,14 @@ class Photo < ActiveRecord::Base
     end
 
     return k_factor
+  end
+
+  def img_modify
+    if self.is_portrait == 'Y'
+      'width'
+    else
+      'height'
+    end
   end
 
 end
