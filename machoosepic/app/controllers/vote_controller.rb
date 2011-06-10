@@ -21,7 +21,7 @@ class VoteController < ApplicationController
   end
 
   def create
-    #flash[:notice] = "Thanks for voting!"
+    flash[:notice] = "Thanks for voting!"
     #flash[:params] = params
 
     photo1_id = params['photo_1']

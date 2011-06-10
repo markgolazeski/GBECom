@@ -1,23 +1,36 @@
+.instructions
+  %h1
+    Choose Your Favorite Photo
+%hr{:width => "75%"}
 .flash
-  %span=flash[:notice]
-  %span=flash[:params]
+  %span
+    =flash[:notice]
 %form{:method => 'POST'} 
-  %strong 
-    Photo 1 Rating:
-    =@photo1.rating
-    Match Count:
-    =@photo1.match_count
-  %input{:name => 'photo_1', :id => 'photo_id_1', :type => 'hidden', :value => "#{@photo1.id}"}
-  %input{:name => 'photo_2', :id => 'photo_id_2', :type => 'hidden', :value => "#{@photo2.id}"}
-    %input{:name => 'photo_id_vote', :id => 'btn_1', :type => 'image', :src => "#{@photo1.href}", :"#{@photo1.img_modify}" => 400, :value => "#{@photo1.id}"}
-    // - if @photo1.is_portrait == 'Y' - else :
-    .vote_label
-      %label{:for => 'btn_1'} Vote for this Photo
-  %strong 
-    Photo 1 Rating:
-    =@photo2.rating
-    Match Count:
-    =@photo2.match_count
-    %input{:name => 'photo_id_vote', :id => 'btn_2', :type => 'image', :src => "#{@photo2.href}", :"#{@photo2.img_modify}" => 400, :value => "b#{@photo2.id}"}
-      .vote_label
-        %label{:for => 'btn_2'} Vote for this Photo
+  .photo_heading
+    %h2#photo_info_1
+      Photo 1 Rating:
+      =@photo1.rating
+      Match Count:
+      =@photo1.match_count
+    %h2#photo_info_2
+      Photo 2 Rating:
+      =@photo2.rating
+      Match Count:
+      =@photo2.match_count
+  .clear
+  %input{:name => 'photo_1', :id => 'photo_id_1', :type => 'hidden', :value => "#{@photo1.id}", :alt => "id:#{@photo1.id}"}
+  %input{:name => 'photo_2', :id => 'photo_id_2', :type => 'hidden', :value => "#{@photo2.id}", :alt => "id:#{@photo1.id}"}
+  .clear
+  .img_input
+    %input{:class => 'img_input', :name => 'photo_id_vote', :id => 'btn_1', :type => 'image', :src => "#{@photo1.href}", :"#{@photo1.img_modify}" => 400, :value => "#{@photo1.id}"}
+    %input{:class => 'img_input', :name => 'photo_id_vote', :id => 'btn_2', :type => 'image', :src => "#{@photo2.href}", :"#{@photo2.img_modify}" => 400, :value => "b#{@photo2.id}"}
+    .clear
+    /.vote_label
+    /  #btn_label_1
+    /    %label{:for => 'btn_1'} Vote for this Photo
+    /  #btn_label_2
+    /    %label{:for => 'btn_2'} Vote for this Photo
+  .links
+    %a{:href => '/top'}
+      Click here to view the top rated photos
+

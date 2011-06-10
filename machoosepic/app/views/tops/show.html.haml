@@ -1,0 +1,8 @@
+%p
+  == Total Photos: #{@num_photos}
+  == Total Votes: #{@num_votes}
+-@ranked_photos.each do |photo|
+  %p
+    = "Id: #{photo.id}, Score: #{photo.rating}"
+    %img{:src => "#{photo.href}", :"#{photo.img_modify}" => 400}
+    %strong== Taken by #{photo.owner}

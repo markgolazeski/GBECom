@@ -11,4 +11,4 @@ Photo.create(:href => '/images/test_photos/IMGP1194.jpg', :owner => 'Mark Golaze
 Photo.create(:href => '/images/test_photos/IMGP1207.jpg', :owner => 'Mark Golazeski')
 Photo.create(:href => '/images/test_photos/IMGP1208.jpg', :owner => 'Mark Golazeski')
 Photo.create(:href => '/images/test_photos/IMGP1255.jpg', :owner => 'Mark Golazeski')
-Photo.create(:href => '/images/test_photos/eugene_1.jpg', :owner => 'Mark Golazeski')
+Photo.create(:href => '/images/test_photos/eugene_1.jpg', :owner => 'Thomas Borsje')

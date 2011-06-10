@@ -1,3 +1,12 @@
-%strong Photo Show
-%strong= @photo
-
+%strong Photo Details
+%img{:src => "#{@photo.href}"}
+Details
+.details
+  %ul 
+    %li== id: #{@photo.id}
+    %li== href: #{@photo.href}
+    %li== owner: #{@photo.owner}
+    %li== rating: #{@photo.rating}
+    %li== match count: #{@photo.match_count}
+    %li== created_at: #{@photo.created_at}
+    %li== updated_at: #{@photo.updated_at}

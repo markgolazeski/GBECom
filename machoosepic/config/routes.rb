@@ -13,8 +13,8 @@ Machoosepic::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :vote
-  resources :top
   resources :photo
+  resource  :top
 
   # Sample resource route with options:
   #   resources :products do
