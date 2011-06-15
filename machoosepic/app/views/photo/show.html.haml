@@ -1,7 +1,9 @@
-%strong Photo Details
-%img{:src => "#{@photo.href}"}
-Details
-.details
+.title
+  %h1
+    Photo Details
+.photo_img
+  %img{:src => "#{@photo.href}"}
+.photo_details
   %ul 
     %li== id: #{@photo.id}
     %li== href: #{@photo.href}
