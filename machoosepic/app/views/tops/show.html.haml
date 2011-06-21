@@ -2,27 +2,28 @@
   %h1
     Click a Photo For Details
   %h3.links
-    = link_to "Click to Vote More!", vote_index_path
+    = link_to "Vote More!", vote_index_path
   %p
     %label Total Photos: 
     %span= "#{@num_photos}"
   %p
     %label Total Votes:
     %span= "#{@num_votes}"
-%ol.top_list
-  -@ranked_photos.each do |photo|
-    %li
-      .id
-        /= "Id: #{photo.id}, Score: #{photo.rating}"
-        %strong
-          Score: 
-        %span
-          = "#{photo.rating}"
-      .photo
-        = link_to image_tag("#{photo.href}", :"#{photo.img_modify}" => 400), photo 
-      .filler
-        %br
-        %br
-        %hr
-        %br
-        %br
+.list_div
+  %ol.top_list
+    -@ranked_photos.each do |photo|
+      %li
+        .id
+          /= "Id: #{photo.id}, Score: #{photo.rating}"
+          /%strong
+          /  Score: 
+          /%span
+          /  = "#{photo.rating}"
+        .photo
+          = link_to image_tag("#{photo.href}", :"#{photo.img_modify}" => 400), photo 
+        .filler
+          %br
+          %br
+          %hr
+          %br
+          %br

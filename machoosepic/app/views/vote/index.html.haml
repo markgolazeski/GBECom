@@ -3,8 +3,11 @@
     Choose Your Favorite Photo
 %hr{:width => "75%"}
 .flash
-  %span
-    =flash[:notice]
+  - if "#{flash[:notice]}" == ""
+    .hidden
+  - else 
+    %span
+      ="#{flash[:notice]}"
 %form{:method => 'POST'} 
   .photo_heading
     %h2#photo_info_1
