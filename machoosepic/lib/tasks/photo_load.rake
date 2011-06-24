@@ -7,7 +7,7 @@ namespace :photo do
     dir = ENV['DIR']
     owner = ENV['OWNER'] || 'Unknown'
     Dir.foreach(long_dir) do |file|
-      if file[0] != "."
+      if file[0,1] != "."
         filename = [dir, file].join('/')
         if Photo.where(:href => filename).count == 0 
           puts "Importing #{filename}..."
